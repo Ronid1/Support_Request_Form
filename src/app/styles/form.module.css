@@ -1,0 +1,51 @@
+label {
+  font-weight: bold;
+}
+
+.steps_list {
+  list-style-type: none;
+  padding-left: 10px;
+}
+
+.step_input {
+  width: 90%;
+}
+
+.btn_steps {
+  color: white;
+  font-size: 18px;
+  text-align: center;
+  margin: 0px 2px;
+  width: 28px;
+}
+
+.btn_decrease {
+  background-color: #ed7168;
+}
+.btn_decrease:hover {
+  background-color: #e8594f;
+}
+
+.btn_increase {
+  background-color: #c3c4c2;
+}
+.btn_increase:hover {
+  background-color: #9d9e9d;
+}
+
+.btn_cropped {
+  padding: 3px 5px;
+}
+
+.checkbox_label {
+  font-weight: normal;
+}
+
+.checkbox {
+  margin-right: 7px;
+}
+
+.error_msg {
+  color: red;
+  font-size: 10px;
+}
