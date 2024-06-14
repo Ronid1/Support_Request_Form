@@ -22,7 +22,7 @@ function ThankYou() {
   const navigate = useNavigate();
 
   return (
-    <>
+    <div className="overlay">
       <h3>Your Request Has Been Submitted!</h3>
       <div className="card">
         <div className="card-body">
@@ -72,7 +72,7 @@ function ThankYou() {
       >
         Send Another Request
       </button>
-    </>
+    </div>
   );
 }
 

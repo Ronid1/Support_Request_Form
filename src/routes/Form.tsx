@@ -30,7 +30,7 @@ function Form() {
   }
 
   return (
-    <>
+    <div className="overlay">
       <h1>Support Request Form</h1>
       <form className="mb-3" onSubmit={handleSubmit(onSubmit)}>
         <div className="mb-3">
@@ -102,36 +102,40 @@ function Form() {
                   <span>Step {index + 1}</span>
                   <section key={field.id} className="row">
                     <input
-                      className={`form-control form-control-sm col-8 ${style.step_input}`}
+                      className="form-control form-control-sm col"
                       {...register(`stepsToReproduce.${index}.text`)}
                       type="text"
                     />
-                    <button
-                      type="button"
-                      className={`btn btn-sm col-auto ${style.btn_decrease} ${style.btn_steps}`}
-                      onClick={() => remove(index)}
-                    >
-                      -
-                    </button>
-                    <button
-                      type="button"
-                      className={`btn btn-sm col-auto ${style.btn_increase} ${style.btn_steps}`}
-                      onClick={() => insert(index + 1, { text: "" })}
-                    >
-                      +
-                    </button>
+                    <div className="col">
+                      <button
+                        type="button"
+                        className={`btn btn-sm ${style.btn_decrease} ${style.btn_steps}`}
+                        onClick={() => remove(index)}
+                      >
+                        -
+                      </button>
+                      <button
+                        type="button"
+                        className={`btn btn-sm ${style.btn_increase} ${style.btn_steps}`}
+                        onClick={() => insert(index + 1, { text: "" })}
+                      >
+                        +
+                      </button>
+                    </div>
                   </section>
                 </li>
               );
             })}
           </ul>
-          <button
-            type="button"
-            className={`btn btn-outline-secondary ${style.btn_cropped}`}
-            onClick={() => append({ text: "" })}
-          >
-            Add Step
-          </button>
+          {fields.length === 0 && (
+            <button
+              type="button"
+              className={`btn btn-outline-secondary ${style.btn_cropped}`}
+              onClick={() => append({ text: "" })}
+            >
+              Add Step
+            </button>
+          )}
           {errors.stepsToReproduce && (
             <div className={style.error_msg}>
               {errors.stepsToReproduce.message}
@@ -143,7 +147,7 @@ function Form() {
           Submit Form
         </button>
       </form>
-    </>
+    </div>
   );
 }
 
